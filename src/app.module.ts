@@ -5,12 +5,14 @@ import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import * as session from 'express-session';
 
 import { AuthModule } from './auth/auth.module'; 
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.MONGO_URI),
-    AuthModule
+    AuthModule,
+    ChatModule
     
   ],
   controllers: [],
